@@ -1,0 +1,77 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "communitymentions",
+  "version": "1.0.0",
+  "description": "See which subreddits AI answers cite, matched to your product, and each subreddit's most-cited threads.",
+  "author": {
+    "name": "CommunityMentions",
+    "email": "ryan@communitymentions.com",
+    "url": "https://communitymentions.com"
+  },
+  "homepage": "https://communitymentions.com",
+  "keywords": ["reddit", "subreddits", "ai search", "reddit marketing", "generative engine optimization"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "CommunityMentions",
+        "shortDescription": "Subreddits AI answers cite",
+        "longDescription": "CommunityMentions tracks which Reddit communities AI answers cite when people ask for product recommendations: tens of thousands of citations across answers from OpenAI models, Perplexity and Gemini. Describe a product or niche and it returns the subreddits where it fits, with how often AI answers cited each one and its member count. Ask about one subreddit and it returns its citations by engine, what kinds of questions those answers were about, and the threads cited most.\n\nThe data covers subreddits cited 50 or more times, or where CommunityMentions has placed 50 or more verified comments. Counts under 50 are not published. Health, drug, mental-health, legal-help and adult communities are left out.",
+        "developerName": "CommunityMentions",
+        "category": "Business & Operations",
+        "capabilities": [
+          "Find subreddits that fit a product",
+          "AI-citation counts per subreddit",
+          "Most-cited Reddit threads per subreddit"
+        ],
+        "websiteURL": "https://communitymentions.com",
+        "supportURL": "https://communitymentions.com/company",
+        "defaultPrompt": [
+          "Which subreddits fit an AI writing tool for marketers?",
+          "How often do AI answers cite r/SaaS?",
+          "Which Reddit threads do AI answers cite in r/coldemail?"
+        ],
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Subreddits that fit a product description",
+              "prompt": "Which subreddits fit an AI writing tool for marketers?",
+              "tools_triggered": "find_subreddits",
+              "expected_behavior": "Returns up to 10 subreddits, closest match first, each with its category, AI citation count (or 'under 50'), member count and data page link."
+            },
+            {
+              "description": "Subreddits for a non-software niche",
+              "prompt": "Where on Reddit do people talk about buying used cars?",
+              "tools_triggered": "find_subreddits",
+              "expected_behavior": "Returns car subreddits such as r/UsedCars and r/whatcarshouldIbuy with their AI citation counts and links."
+            },
+            {
+              "description": "One subreddit's AI-citation data",
+              "prompt": "How often do AI answers cite r/SaaS, and which threads?",
+              "tools_triggered": "get_subreddit",
+              "expected_behavior": "Returns r/SaaS's AI citations, citing answers, citations by engine, question types, rank among subreddits cited 50+ times, and its most-cited threads with links."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Posting to Reddit: the plugin is read-only",
+              "prompt": "Post a comment about my product in r/SaaS."
+            },
+            {
+              "description": "A subreddit outside the data: the plugin says so instead of guessing",
+              "prompt": "How often do AI answers cite r/notarealsubreddit?"
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "This plugin does not sell products or process payments."
+      },
+      "publication": {
+        "release_notes": "First release: find subreddits for a product, and one subreddit's AI-citation data and most-cited threads."
+      }
+    }
+  }
+}
