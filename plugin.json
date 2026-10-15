@@ -25,6 +25,7 @@
         ],
         "websiteURL": "https://communitymentions.com",
         "supportURL": "https://communitymentions.com/company",
+        "privacyPolicyURL": "https://communitymentions.com/privacy",
         "defaultPrompt": [
           "Which subreddits fit an AI writing tool for marketers?",
           "How often do AI answers cite r/SaaS?",
