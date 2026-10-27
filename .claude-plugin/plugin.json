@@ -1,0 +1,21 @@
+{
+  "name": "communitymentions",
+  "version": "1.0.0",
+  "description": "See which subreddits AI answers cite, matched to your product, and each subreddit's most-cited threads.",
+  "author": {
+    "name": "CommunityMentions",
+    "email": "ryan@communitymentions.com",
+    "url": "https://communitymentions.com"
+  },
+  "homepage": "https://communitymentions.com",
+  "repository": "https://github.com/rdoyle99/communitymentions-plugin",
+  "license": "MIT",
+  "keywords": [
+    "reddit",
+    "subreddits",
+    "ai search",
+    "reddit marketing",
+    "generative engine optimization"
+  ],
+  "privacyPolicyUrl": "https://communitymentions.com/privacy"
+}
