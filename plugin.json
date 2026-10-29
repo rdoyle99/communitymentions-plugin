@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "communitymentions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "See which subreddits AI answers cite, matched to your product, and each subreddit's most-cited threads.",
   "author": {
     "name": "CommunityMentions",

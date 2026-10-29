@@ -1,8 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
   "mcpServers": {
     "communitymentions": {
-      "type": "streamable-http",
+      "type": "http",
       "url": "https://communitymentions.com/api/mcp"
     }
   }

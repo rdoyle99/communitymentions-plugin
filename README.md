@@ -17,9 +17,15 @@ The data covers subreddits cited 50+ times in the AI answers CommunityMentions t
 - "How often do AI answers cite r/SaaS, and which threads?"
 
 ## Install
-- **Claude Code / Cursor / other Agent Plugin hosts:** install this repo as a plugin, or add the server yourself:
+- **Claude Code:** this repo is a plugin marketplace. Install the plugin (MCP server + skill) with:
+  ```
+  /plugin marketplace add rdoyle99/communitymentions-plugin
+  /plugin install communitymentions@communitymentions
+  ```
+- **Skill only (Claude Code, Cursor, Codex and other agents):** `npx skills add rdoyle99/communitymentions-plugin`
+- **Server only (Claude Code, Cursor, other hosts):**
   `claude mcp add --transport http communitymentions https://communitymentions.com/api/mcp`
-- **Any MCP client:** use `.mcp.json` / `mcp.json` in this repo.
+- **Any MCP client:** `.mcp.json` is the Claude Code shape (`"type": "http"`); `mcp.json` is the Agent Plugins shape (`"type": "streamable-http"`). Both point at the same server.
 
 Also in the official MCP registry as `com.communitymentions/communitymentions`. Browse the data: https://communitymentions.com/subreddit-finder
 
